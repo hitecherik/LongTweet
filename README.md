@@ -1,7 +1,7 @@
 LongTweet
 =========
 
-Ever wanted to write tweets longer than 140 characters? LongTweet can help you with that. Find it at http://code.hitecherik.com/long-tweet/
+Ever wanted to write tweets longer than 140 characters? LongTweet can help you with that. Find it at http://code.hitecherik.tk/long-tweet/
 
 ## Use
 Feel free to download and use any code from the project. It is written in HTML, CSS, JavaScript and PHP.
