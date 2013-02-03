@@ -1,6 +1,14 @@
 <?php
+	// include mobile_detect.php to make twitter button size
+	include 'mobile_detect.php';
+	$detect = new Mobile_Detect();
+	$buttonSize = "";
+	if($detect->isMobile() || $detect->isTablet()){
+		$buttonSize = " btn-large";
+	}
+
 	$_print = false;
-	
+
 	if (isset($_POST['tweet'])) {
 		// declare variables
 		$_print = true;
@@ -28,9 +36,10 @@
 					$value = "..." . $value . "...";
 				}
 			}
+			$value = str_replace("+", "%20", urlencode($value));
 
 			// adds to $print
-			$print .= '<li><a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-url="blah" data-count="none" data-text="'.$value.'">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></li>';
+			$print .= '<li><a href="https://twitter.com/intent/tweet?text='.$value.'&related=hitecherik" target="_blank" class="twitter-share-button btn'.$buttonSize.'">Tweet</a></li>';
 		}
 		unset($value); unset($count); // destroys unneeded variables
 	}

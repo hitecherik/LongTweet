@@ -3,10 +3,12 @@
  */
 
 .main{
-	width: 960px;
+	width: 75%;
 	margin: auto;
 }
-
+.result h3{
+	letter-spacing: 1px;
+}
 li iframe{
 	margin-bottom: -5px;
 }
@@ -32,4 +34,19 @@ section.advanced{
 }
 input[type=radio]{
 	margin-bottom: 5px;
+}
+.ui-tooltip-content{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.ui-tooltip-content:before{
+	content: '';
+	background: url(../img/info.png) no-repeat;
+	float: right;
+	height: 24px;
+	width: 24px;
+	margin-top: 7.5px;
+}
+a.twitter-share-button{
+	background: url(../img/twitter-bird.png) 5px 5px no-repeat fixed;
+	padding-left: 30px;
 }
