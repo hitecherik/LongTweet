@@ -92,41 +92,7 @@
 			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
 			<script type="text/javascript" src="js/bootstrap.min.js"></script>
 			<script type="text/javascript" src="js/jquery-ui.min.js"></script>
-			<script type="text/javascript">
-				var advancedOpen = false,
-					i = $('h5.advanced i');
-
-				$('h5.advanced').on('click', function(){
-					$(this).next().slideToggle();
-
-					if(advancedOpen){
-						advancedOpen = false;
-						i.fadeOut(function(){
-							i.addClass('icon-chevron-down').removeClass('icon-chevron-up').fadeIn();
-						})
-					} else {
-						advancedOpen = true;
-						i.fadeOut(function(){
-							i.addClass('icon-chevron-up').removeClass('icon-chevron-down').fadeIn();
-						})
-					}
-				})
-
-				$('section.advanced').hide();
-
-				if(!tweetDisplayed){
-					$('div.tweet-form').addClass('span12').removeClass('span6');
-				}
-
-				// tooltips
-				$('div.tweet-form').tooltip();
-
-				$('div.error').alert();
-
-				$('div.result a').on('click', function(){
-					$(this).parent().append('<span class="text-success tick">&#10004;</span>');
-				})
-			</script>
+			<script type="text/javascript" src="js/script.js"></script>
 		</div>
 	</body>
 </html>
