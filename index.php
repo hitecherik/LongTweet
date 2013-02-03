@@ -13,24 +13,49 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<form action="index.php" method="post">
-			<label for="tweet">Tweet:</label><br>
-			<textarea name="tweet" cols="30" rows="10"></textarea><br>
-			<input class="button" type="submit" value="Make Long Tweet!">
-		</form>
+		<div class="main">
+			<div class="row-fluid">
+				<div class="span6">
+					<form action="index.php" method="post">
+						<h3>Create a LongTweet!</h3>
+						<label for="tweet">Tweet:</label>
+						<textarea name="tweet" rows="7"></textarea><br>
+						<h5 class="advanced">Advanced Options: <i class="icon-chevron-down"></i></h5>
+						<section class="advanced">
+							<label for="tweet-length" class="inline-label">Tweet Length: </label>
+							<input type="number" name="tweet-length" class="input-small" value="140"><br> 
+							<input type="radio" name="toggle-dots" value="on" checked="true"> Show "..."<br>
+							<input type="radio" name="toggle-dots" value="off"> Hide "..."
+						</section>
+						<input class="btn btn-primary" type="submit" value="Make Long Tweet!">
+					</form>
+					<hr>
+				</div>
 
-		<hr>
+				<div class="span6">
+					<?php 
+						if($_print){
+					?>
+					<h3>Tweet these: </h3>
+					<ol>
+						<?php
+							echo $print;
+						?>
+					</ol>
+					<?
+						}
+					?>
+				</div>
+			</div>
 
-		<?php 
-			if($_print){
-		?>
-		<ol>
-			<?php
-				echo $print;
-			?>
-		</ol>
-		<?
-			}
-		?>
+			<!-- end html start scripts -->
+			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+			<script type="text/javascript">
+				$('section.advanced').hide();
+				$('h5.advanced').on('click', function(){
+					$(this).next().slideToggle();
+				})
+			</script>
+		</div>
 	</body>
 </html>
