@@ -1,4 +1,6 @@
 <?php
+	$_print = false;
+	
 	if (isset($_POST['tweet'])) {
 		// declare variables
 		$_print = true;

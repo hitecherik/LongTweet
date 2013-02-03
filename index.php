@@ -11,11 +11,21 @@
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
 		<link rel="stylesheet" href="css/style.css">
+
+		<!-- php variables sent to javascript -->
+		<script type="text/javascript">
+			var tweetDisplayed = false;
+		</script>
+		<?php
+			if($_print){
+				echo "<script type=\"text/javascript\">tweetDisplayed = true;</script>"; 
+			}
+		?>
 	</head>
 	<body>
 		<div class="main">
 			<div class="row-fluid">
-				<div class="span6">
+				<div class="span6 tweet-form">
 					<form action="index.php" method="post">
 						<h3>Create a LongTweet!</h3>
 						<label for="tweet">Tweet:</label>
@@ -32,20 +42,20 @@
 					<hr>
 				</div>
 
+				<?php 
+					if($_print){
+				?>
 				<div class="span6">
-					<?php 
-						if($_print){
-					?>
 					<h3>Tweet these: </h3>
 					<ol>
 						<?php
 							echo $print;
 						?>
 					</ol>
-					<?
-						}
-					?>
 				</div>
+				<?
+					}
+				?>
 			</div>
 
 			<!-- end html start scripts -->
@@ -55,6 +65,10 @@
 				$('h5.advanced').on('click', function(){
 					$(this).next().slideToggle();
 				})
+
+				if(!tweetDisplayed){
+					$('div.tweet-form').addClass('span12').removeClass('span6');
+				}
 			</script>
 		</div>
 	</body>
