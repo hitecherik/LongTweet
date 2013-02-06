@@ -18,7 +18,7 @@ li:not(:last-child){
 label.inline-label{
 	display: inline;
 }
-textarea[name=tweet]{
+textarea[name=tweet], textarea[name=message-to-friend]{
 	width: 90%;
 }
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button{

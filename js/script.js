@@ -1,6 +1,6 @@
 (function(){
 	var advancedOpen = false,
-	i = $('h5.advanced i');
+	i = $('h5.advanced i.chevron');
 
 	$('h5.advanced').on('click', function(){
 		$(this).next().slideToggle();
@@ -28,8 +28,27 @@
 	$('div.tweet-form').tooltip();
 
 	$('div.error').alert();
+	$('div.success').alert();
 
 	$('div.result a').on('click', function(){
 		$(this).parent().append('<span class="text-success tick">&#10004;</span>');
+	})
+	
+	/* $('label').on('click', function(){
+		var $this = $(this);
+
+		$this.next('input').addClass('next-input');
+		document.getElementsByClassName('next-input').focus();
+		$this.next('input').removeClass('next-input');
+	}) */
+
+	$('form.tweetfriend').submit(function(e){
+		e.preventDefault();
+
+		var username = document.getElementById('username').value,
+			urlUsername = "%40" + username,
+			url = "http://twitter.com/intent/tweet?url=http%3A%2F%2Fbit.ly%2Flong-tweet%2F&text=" + urlUsername + "%20LongTweet&via=hitecherik&related=hitecherik";
+
+		window.open(url);
 	})
 })();
