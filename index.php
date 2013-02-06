@@ -42,7 +42,15 @@
 							echo $error;
 						?>
 						<label for="tweet" title="Enter the text for the LongTweet that you want to make.">Tweet:</label>
-						<textarea name="tweet" rows="7" title="Enter the text for the LongTweet that you want to make."><?php echo trim($original); ?></textarea><br>
+						<textarea name="tweet" rows="7" title="Enter the text for the LongTweet that you want to make." id="countHere"><?php echo trim($original); ?></textarea><br>
+						<div class="count">
+							<div class="countSection">
+								Count: <span class="count">0</span> <small><i>(Adds "(tweet sent via LongTweet, an app by @hitecherik)" to count value.)</i></small>
+							</div>
+							<div class="countSection countTotal">
+								Number of Tweets: <span class="total">0</span>
+							</div>
+						</div>
 						<h5 class="advanced"><i class="icon-cog"></i> Advanced Options: <i class="icon-chevron-down chevron"></i></h5>
 						<section class="advanced">
 							<p class="text-info">Here there are more advanced options so you can have more control over your LongTweet: </p>

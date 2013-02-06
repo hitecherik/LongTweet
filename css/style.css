@@ -56,3 +56,25 @@ span.tick{
 .alert{
 	width: 86.5%;
 }
+
+/*count styling*/
+textarea#countHere{
+	display: block;
+}
+.countSection{
+	display: inline-block;
+	color: grey;
+}
+.countTotal:before{
+	content: ' / ';
+	margin-left: 10px;
+	margin-right: 10px;
+	font-weight: bold;
+}
+.count{
+	margin-top: -30px;
+}
+span.count, span.total{
+	color: black;
+	font-weight: bold;
+}
